@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
               darkTheme: AppTheme.get(isLight: false),
                home:
                const SplashScreen(),
-
               builder: EasyLoading.init(),
 
           );

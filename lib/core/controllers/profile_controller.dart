@@ -22,7 +22,7 @@ final Rx<TextEditingController>  _confirmPasswordController = TextEditingControl
 
 
 
-
+var passwordFormKey = GlobalKey<FormState>();
 
   String? newPasswordValidator(String? val) {
     if (val == null) {

@@ -118,5 +118,10 @@ class ConstTextStyles{
 
 
 
+  static var mainContainer =  GoogleFonts.aBeeZee(
+      fontSize: 20.sp,
+      fontWeight: FontWeight.bold,
+      color: Colors.white70
+  );
 
 }

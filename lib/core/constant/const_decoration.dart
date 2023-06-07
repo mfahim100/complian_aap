@@ -156,5 +156,26 @@ class ConstDecorations{
     borderRadius: BorderRadius.circular(5.w),
   );
 
+  static var mainContainerDecoration = BoxDecoration(
+    color: Colors.black,
+    boxShadow:  [
+      BoxShadow(
+          color: Colors.black,
+          blurStyle: BlurStyle.inner,
+          blurRadius: 08.sp,
+          spreadRadius: 05.sp
+      )],
+    gradient: const LinearGradient(
+        colors: [
+          Colors.black,
+          Colors.black45,
+          Colors.grey,
+          Colors.black,
+        ],
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft
+    ),
+    borderRadius: BorderRadius.circular(8.w),
+  );
 
 }

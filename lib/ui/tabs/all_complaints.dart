@@ -45,7 +45,7 @@ class AllComplaints extends StatelessWidget {
                     )
                   : ListView.builder(
                       itemCount: allComplaintsController.getAllComplaint.length,
-                      itemBuilder: (context, index) {
+                      itemBuilder: (context,index) {
                         ComplaintModel mdl =
                             allComplaintsController.getAllComplaint[index];
                         return Column(
@@ -65,7 +65,7 @@ class AllComplaints extends StatelessWidget {
                                       children: [
 
                                         Text(
-                                          'Secret Key: ${mdl.complaintSecretKey}',
+                                          'Complaint ID: ${mdl.compliantID}',
                                           style: TextStyle(
                                               fontSize: 19.sp,
                                               color: Colors.white),
@@ -74,7 +74,7 @@ class AllComplaints extends StatelessWidget {
                                           height: 1.h,
                                         ),
                                         Text(
-                                          'Complaint Description: ${mdl.description!}',
+                                          'Complaint Title: ${mdl.complaintTitle!}',
                                           style: TextStyle(
                                               fontSize: 17.sp,
                                               color: Colors.white),

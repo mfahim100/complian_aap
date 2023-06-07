@@ -46,26 +46,26 @@ class DatabaseService {
 
 
   Future<void> addComplaintData(
-    description,
-    complaint,
-      complaintSecretKey
+      compliantID,
+      complaintTitle,
+    complaint
   ) async {
-    var compliantId = const Uuid().v1();
+    var compliantUid = const Uuid().v1();
     User? user = FirebaseAuth.instance.currentUser;
     await getUser(user!.uid).then((usr) async {
       try {
 
-        await _db.collection('Complaint').doc(compliantId).set({
-          "compliantId": compliantId,
+        await _db.collection('Complaint').doc(compliantUid).set({
+          "compliantUid": compliantUid,
           "uid": usr!.uid,
           "email": usr.email,
           "name": usr.name,
           "samester": usr.samester,
           "registrationNumber": usr.registrationNumber,
           "department": usr.department,
-          "description": description,
+          "complaintTitle": complaintTitle,
           "complaint": complaint,
-          "complaintSecretKey": complaintSecretKey,
+          "complaintId": compliantID,
           "status":0
         });
       } catch (e, s) {

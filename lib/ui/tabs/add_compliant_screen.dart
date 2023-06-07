@@ -59,20 +59,20 @@ class _AddComplaintScreenState extends State<AddComplaintScreen> {
                               ),
 
                               CompliantTextField(
-                                controller: complaintScreenController.complaintSecretKeyController.value,
-                                hintText: 'Enter Complaint Secret Key',
-                                labelText: 'Secret Key',
-                                validator: complaintScreenController.complaintSecretKeyValidator,
+                                controller: complaintScreenController.complaintIdController.value,
+                                hintText: 'Enter Complaint ID',
+                                labelText: 'Compliant ID',
+                                validator: complaintScreenController.complaintIDValidator,
                               ),
                               SizedBox(
                                 height: 1.h,
                               ),
 
                               CompliantTextField(
-                                controller: complaintScreenController.descriptionController.value,
-                                hintText: 'Enter Complaint Description',
-                                labelText: 'Description',
-                                validator: complaintScreenController.descriptionValidator,
+                                controller: complaintScreenController.complaintTitleController.value,
+                                hintText: 'Enter Complaint Title',
+                                labelText: 'Title',
+                                validator: complaintScreenController.complaintTitleValidator,
                               ),
                               SizedBox(
                                 height: 1.h,
@@ -81,7 +81,7 @@ class _AddComplaintScreenState extends State<AddComplaintScreen> {
                                 controller: complaintScreenController.complaintController.value,
                                 hintText: 'Enter Your Complaint',
                                 labelText: 'Enter Your Complaint',
-                                validator: complaintScreenController.compliantValidator,
+                                validator: complaintScreenController.complaintValidator,
                               ),
                               SizedBox(
                                 height: 1.h,

@@ -22,48 +22,61 @@ class PasswordChangeDialogBox extends StatelessWidget {
           height: 40.h,
               width: 95.w,
               decoration: ConstDecorations.passwordDialogBoxDecoration,
-              child: Column(
-                children: [
-                  SizedBox(height: 5.h,),
-                  Text(
-                    'Change Password',
-                    style: ConstTextStyles.changePassword,
-                  ),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  SizedBox(
-                    width: 90.w,
-                    child: CustomTextField(
-                      hintText: 'New Password',
-                      labelText: ' Enter Your New Password',
-                      validator: profileController.newPasswordValidator,
-                      controller: profileController.newPasswordController,
+              child: Form(
+                key: profileController.passwordFormKey,
+                child: Column(
+                  children: [
+                    SizedBox(height: 5.h,),
+                    Text(
+                      'Change Password',
+                      style: ConstTextStyles.changePassword,
                     ),
-                  ),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  SizedBox(
-                    width: 90.w,
-                    child: CustomTextField(
-                      hintText: 'Confirm Password',
-                      labelText: 'Confirm Password',
-                    controller: profileController.confirmPasswordController,
-                      validator: profileController.newPasswordValidator,
+                    SizedBox(
+                      height: 2.h,
                     ),
-                  ),
+                    SizedBox(
+                      width: 90.w,
+                      child: CustomTextField(
+                        hintText: 'New Password',
+                        labelText: ' Enter Your New Password',
+                        validator: profileController.newPasswordValidator,
+                        controller: profileController.newPasswordController,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    SizedBox(
+                      width: 90.w,
+                      child: CustomTextField(
+                        hintText: 'Confirm Password',
+                        labelText: 'Confirm Password',
+                      controller: profileController.confirmPasswordController,
+                        validator: profileController.newPasswordValidator,
+                      ),
+                    ),
 
-                  SizedBox(height: 2.h,),
+                    SizedBox(height: 2.h,),
 
-                  SizedBox(
-                    width: 90.w,
-                    child: CustomButton(text: 'Change Password', onPressed: (){
-                      profileController.changePassword();
-                    }),
-                  )
+                    SizedBox(
+                      width: 90.w,
+                      child: CustomButton(text: 'Change Password', onPressed: (){
+                        if(profileController.passwordFormKey.currentState!.validate()){
+                          profileController.changePassword();
+                        }
 
-                ],
+                      }),
+                    ),
+
+                    SizedBox(
+                      width: 90.w,
+                      child: CustomButton(text: 'Cancel', onPressed: (){
+                    Navigator.of(context).pop();
+                      }),
+                    ),
+
+                  ],
+                ),
               ),
             ),
       ),

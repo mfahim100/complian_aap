@@ -9,63 +9,64 @@ import 'all_complaints_controller.dart';
 class ComplaintScreenController extends GetxController{
   final complaintFormKey = GlobalKey<FormState>();
 
-  final Rx<TextEditingController> _descriptionController = TextEditingController().obs;
-  Rx<TextEditingController>  get descriptionController =>  _descriptionController;
+
+  final Rx<TextEditingController> _complaintIdController = TextEditingController().obs;
+  Rx<TextEditingController>  get complaintIdController =>  _complaintIdController;
+
+  final Rx<TextEditingController> _complaintTitleController = TextEditingController().obs;
+  Rx<TextEditingController>  get complaintTitleController =>  _complaintTitleController;
 
 final Rx<TextEditingController> _complaintController = TextEditingController().obs;
   Rx<TextEditingController>  get complaintController =>  _complaintController;
 
-final Rx<TextEditingController> _complaintSecretKeyController = TextEditingController().obs;
-  Rx<TextEditingController>  get complaintSecretKeyController =>  _complaintSecretKeyController;
 
-
-
-  String? descriptionValidator(String? val){
+  String? complaintIDValidator(String? val){
 
     if(val!.isEmpty ){
-      return 'Please Enter Your Department Name';
+      return 'Please Enter Your Complaint ID';
+    }
+    return null;
+  }
+
+
+
+  String? complaintTitleValidator(String? val){
+
+    if(val!.isEmpty ){
+      return 'Please Enter Your Complaint title';
     }
     return null;
 
   }
 
 
-  String? compliantValidator(String? val){
+  String? complaintValidator( String? val){
 
     if(val!.isEmpty ){
-      return 'Please Enter Your Department Name';
-    }
-    return null;
-  }
-
-
-  String? complaintSecretKeyValidator( String? val){
-
-    if(val!.isEmpty ){
-      return 'Please Enter Your Department Name';
+      return 'Please Enter Your Complaint';
     }
     return null;
   }
 
 
   void clearComplaintController() {
-    _descriptionController.value.clear();
-    _complaintSecretKeyController.value.clear();
+    _complaintIdController.value.clear();
+    _complaintTitleController.value.clear();
     _complaintController.value.clear();
 }
 
   void addComplaint(BuildContext context) async {
 
     EasyLoading.show();
-    String description = _descriptionController.value.text.trim();
-    String complaintSecretKey = _complaintSecretKeyController.value.text.trim();
+    String compliantID = _complaintIdController.value.text.trim();
+    String complaintTitle = _complaintTitleController.value.text.trim();
     String complaint = _complaintController.value.text.trim();
 
 
     try {
       EasyLoading.show();
       DatabaseService db = DatabaseService();
-      await db.addComplaintData(description, complaint,complaintSecretKey).whenComplete(() {
+      await db.addComplaintData(compliantID,complaintTitle,complaint).whenComplete(() {
         Get.find<AllComplaintsController>().getUserAllComplaint();
       });
 

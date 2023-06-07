@@ -6,11 +6,11 @@ class ComplaintModel{
    String? department;
    String? samester;
    String? registrationNumber;
-  String? description;
+  String? complaintTitle;
   String? complaint;
   String? name;
   int? status;
- String? complaintSecretKey;
+ String? compliantID;
 
   ComplaintModel({
     this.uid,
@@ -19,11 +19,11 @@ class ComplaintModel{
      required this.department,
      required this.samester,
      required this.registrationNumber,
-    required this.description,
+    required this.complaintTitle,
     required this.complaint,
     required this.name,
     required this.status,
-    required this.complaintSecretKey,
+    required this.compliantID,
   });
 
 
@@ -36,11 +36,11 @@ class ComplaintModel{
      map['department'] = department;
      map['samester'] = samester;
      map['registrationNumber'] = registrationNumber;
-    map['description'] = description;
+    map['complaintTitle'] = complaintTitle;
     map['complaint'] =complaint ;
     map['name'] =name ;
     map['status'] =status ;
-    map['complaintSecretKey'] =complaintSecretKey ;
+    map['compliantID'] =compliantID ;
 
     return map;
   }
@@ -52,11 +52,11 @@ class ComplaintModel{
     department = map['department'];
     samester = map['samester'];
     registrationNumber = map['registrationNumber'];
-    description = map['description']??"";
+    complaintTitle = map['complaintTitle']??"";
     complaint = map['complaint']??"";
     name = map['name']??"";
     status = map['status']??"";
-    complaintSecretKey = map['complaintSecretKey']??"";
+    compliantID = map['compliantID']??"";
   }
 
 
@@ -67,11 +67,11 @@ class ComplaintModel{
     String? department,
     String? samester,
     String? registrationNumber,
-    String? description,
+    String? complaintTitle,
     String? complaint,
     String? name,
     int? status,
-    String? complaintSecretKey,
+    String? compliantID,
   }) =>
       ComplaintModel(
           uid: uid??this.uid,
@@ -80,11 +80,11 @@ class ComplaintModel{
           department: department??this.department,
           samester: samester ?? this.samester,
           registrationNumber: registrationNumber ?? this.registrationNumber,
-          description: description?? this.description,
+          complaintTitle: complaintTitle?? this.complaintTitle,
           complaint: complaint?? this.complaint,
           name: name?? this.name,
           status: status?? this.status,
-          complaintSecretKey: complaintSecretKey?? this.complaintSecretKey
+          compliantID: compliantID?? this.compliantID
       );
 
 

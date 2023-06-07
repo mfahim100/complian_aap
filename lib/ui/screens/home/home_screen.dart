@@ -4,11 +4,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:untitled/ui/screens/home/main_screen.dart';
 import 'package:untitled/ui/tabs/add_compliant_screen.dart';
 import 'package:untitled/ui/tabs/all_complaints.dart';
 import 'package:untitled/ui/tabs/profile_screen.dart';
 import 'package:untitled/ui/tabs/my_complaint_screen.dart';
-import 'package:untitled/ui/tabs/suggestion.dart';
+import 'package:untitled/ui/tabs/feed_back.dart';
 import '../../../core/constant/custom_color_theme.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -39,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   late AnimationController _hideBottomBarAnimationController;
 
   final iconList = <IconData>[
-    Icons.message,
-    Icons.message,
+    Icons.home_filled,
+    Icons.person,
   ];
 
   @override
@@ -111,8 +112,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       body: NotificationListener<ScrollNotification>(
         onNotification: onScrollNotification,
         child: _bottomNavIndex == 0
-            ? AllComplaints()
-            :  Suggestion()
+            ? MainScreen()
+            :  ProfileScreen()
 
       ),
       floatingActionButton: FloatingActionButton(
@@ -154,8 +155,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: AutoSizeText(
                   index == 0
-                      ? 'All Complaints'
-                      :'Suggestion',
+                      ? 'Home'
+                      :'Profile',
 
                   maxLines: 1,
                   style: TextStyle(color: color),

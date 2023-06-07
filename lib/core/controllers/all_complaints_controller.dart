@@ -24,7 +24,10 @@ class AllComplaintsController extends GetxController {
     DatabaseService db = DatabaseService();
     getPendingComplaint = await db
         .getPendingComplaint()
-        .whenComplete(() => isLoading.value = false);
+        .whenComplete(() {
+      isLoading.value = true;
+      isLoading.value = false;
+    });
   }
 
   List<ComplaintModel> getInProcessComplaint = [];
@@ -34,7 +37,11 @@ class AllComplaintsController extends GetxController {
     DatabaseService db = DatabaseService();
     getInProcessComplaint = await db
         .getInProcessComplaint()
-        .whenComplete(() => isLoading.value = false);
+        .whenComplete(() {
+      isLoading.value = true;
+      isLoading.value = false;
+
+    });
   }
 
   List<ComplaintModel> getCompletedComplaint = [];
@@ -44,6 +51,9 @@ class AllComplaintsController extends GetxController {
     DatabaseService db = DatabaseService();
     getCompletedComplaint = await db
         .getCompletedComplaint()
-        .whenComplete(() => isLoading.value = false);
+        .whenComplete(() {
+      isLoading.value = true;
+      isLoading.value = false;
+    });
   }
 }
