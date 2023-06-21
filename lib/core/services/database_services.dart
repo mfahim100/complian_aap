@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:untitled/core/models/compaint_model.dart';
+import 'package:untitled/core/models/complaint_model.dart';
 import 'package:uuid/uuid.dart';
 
 import '../models/user_model.dart';
@@ -65,7 +65,7 @@ class DatabaseService {
           "department": usr.department,
           "complaintTitle": complaintTitle,
           "complaint": complaint,
-          "complaintId": compliantID,
+          "complaintID": compliantID,
           "status":0
         });
       } catch (e, s) {

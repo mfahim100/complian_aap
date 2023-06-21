@@ -7,7 +7,7 @@ import 'package:untitled/ui/tabs/profile_screen.dart';
 
 import '../../core/constant/const_decoration.dart';
 import '../../core/controllers/all_complaints_controller.dart';
-import '../../core/models/compaint_model.dart';
+import '../../core/models/complaint_model.dart';
 
 class AllComplaints extends StatelessWidget {
   AllComplaints({Key? key}) : super(key: key);
@@ -18,20 +18,7 @@ class AllComplaints extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('All Complaints'),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (builder) {
-                  return ProfileScreen();
-                }));
-              },
-              icon: const Icon(Icons.person))
-        ],
-      ),
+     
       body: Container(
         decoration: ConstDecorations.addComplaintMainDecoration,
         child: Padding(
@@ -65,7 +52,7 @@ class AllComplaints extends StatelessWidget {
                                       children: [
 
                                         Text(
-                                          'Complaint ID: ${mdl.compliantID}',
+                                          'Complaint ID: ${mdl.compliantID!}',
                                           style: TextStyle(
                                               fontSize: 19.sp,
                                               color: Colors.white),

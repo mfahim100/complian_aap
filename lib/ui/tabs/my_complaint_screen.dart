@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:untitled/core/constant/const_decoration.dart';
-import 'package:untitled/core/models/compaint_model.dart';
+import 'package:untitled/core/models/complaint_model.dart';
 import '../../core/constant/const_text_styles.dart';
 import '../../core/controllers/main_controller.dart';
 

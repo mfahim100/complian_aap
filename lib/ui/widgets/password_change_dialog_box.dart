@@ -19,7 +19,7 @@ class PasswordChangeDialogBox extends StatelessWidget {
       height: 100.h,
       child: Center(
         child: Container(
-          height: 40.h,
+          height: 50.h,
               width: 95.w,
               decoration: ConstDecorations.passwordDialogBoxDecoration,
               child: Form(
@@ -66,6 +66,10 @@ class PasswordChangeDialogBox extends StatelessWidget {
                         }
 
                       }),
+                    ),
+
+                    SizedBox(
+                      height: 2.h,
                     ),
 
                     SizedBox(

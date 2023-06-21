@@ -1,7 +1,7 @@
 class ComplaintModel{
 
   String? uid;
-  String? compliantId;
+  String? compliantUid;
   String? email;
    String? department;
    String? samester;
@@ -14,7 +14,7 @@ class ComplaintModel{
 
   ComplaintModel({
     this.uid,
-    this.compliantId,
+    this.compliantUid,
     this.email,
      required this.department,
      required this.samester,
@@ -31,7 +31,7 @@ class ComplaintModel{
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = {};
     map['uid'] = uid;
-    map['compliantId'] = compliantId;
+    map['compliantUid'] = compliantUid;
     map['email'] = email;
      map['department'] = department;
      map['samester'] = samester;
@@ -47,7 +47,7 @@ class ComplaintModel{
 
   ComplaintModel.fromMap(Map<String, dynamic> map){
     uid = map['uid']??"";
-    compliantId = map['compliantId']??"";
+    compliantUid = map['compliantUid']??"";
     email = map['email']??"";
     department = map['department'];
     samester = map['samester'];
@@ -62,7 +62,7 @@ class ComplaintModel{
 
   ComplaintModel? copyWith({
     String? uid,
-    String? compliantId,
+    String? compliantUid,
     String? email,
     String? department,
     String? samester,
@@ -75,7 +75,7 @@ class ComplaintModel{
   }) =>
       ComplaintModel(
           uid: uid??this.uid,
-          compliantId: compliantId??this.compliantId,
+          compliantUid: compliantUid??this.compliantUid,
           email: email??this.email,
           department: department??this.department,
           samester: samester ?? this.samester,

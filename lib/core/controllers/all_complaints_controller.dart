@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../models/compaint_model.dart';
+import '../models/complaint_model.dart';
 import '../services/database_services.dart';
 
 class AllComplaintsController extends GetxController {
@@ -18,7 +18,6 @@ class AllComplaintsController extends GetxController {
   }
 
   List<ComplaintModel> getPendingComplaint = [];
-
   Future<void> pendingComplaint() async {
     getPendingComplaint.clear();
     DatabaseService db = DatabaseService();
@@ -30,8 +29,8 @@ class AllComplaintsController extends GetxController {
     });
   }
 
-  List<ComplaintModel> getInProcessComplaint = [];
 
+  List<ComplaintModel> getInProcessComplaint = [];
   Future<void> inProcessComplaint() async {
     getInProcessComplaint.clear();
     DatabaseService db = DatabaseService();
@@ -44,8 +43,8 @@ class AllComplaintsController extends GetxController {
     });
   }
 
-  List<ComplaintModel> getCompletedComplaint = [];
 
+  List<ComplaintModel> getCompletedComplaint = [];
   Future<void> completedComplaint() async {
     getCompletedComplaint.clear();
     DatabaseService db = DatabaseService();

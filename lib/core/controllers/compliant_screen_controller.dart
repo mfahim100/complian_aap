@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:untitled/core/services/database_services.dart';
 
 import 'all_complaints_controller.dart';
+import 'main_controller.dart';
 
 class ComplaintScreenController extends GetxController{
   final complaintFormKey = GlobalKey<FormState>();
@@ -68,6 +69,7 @@ final Rx<TextEditingController> _complaintController = TextEditingController().o
       DatabaseService db = DatabaseService();
       await db.addComplaintData(compliantID,complaintTitle,complaint).whenComplete(() {
         Get.find<AllComplaintsController>().getUserAllComplaint();
+        Get.find<MyComplaintController>().getUserComplaint();
       });
 
 
